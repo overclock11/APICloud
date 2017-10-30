@@ -4,8 +4,9 @@ var Modelo = mongoose.model('Modelo');
 const uuidv4 = require('uuid/v4');
 const config = require("../config");
 var redis = require("redis");
-var client = redis.createClient(config.configRedis.port,config.configRedis.endpoint);
-
+//var client = redis.createClient(config.configRedis.port,config.configRedis.endpoint);
+var client = redis.createClient(process.env.REDISCLOUD_URL, {no_ready_check: true});
+//redis://rediscloud:vl3yKfJebt5Dk8Y9@redis-17956.c14.us-east-1-2.ec2.cloud.redislabs.com:17956
 /**
  * Funciones de Mongo
  */
