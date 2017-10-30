@@ -8,8 +8,7 @@ const uuidv4 = require('uuid/v4');
 /**
  * Funciones para mongo 
  */
-
-//aws.config.loadFromPath("../sqsconfig.json");
+aws.config.loadFromPath("./sqsconfig.json");
 
 exports.mgetVideoByCompetition = function (req,res){
   // recibe el id del concurso y lista todos sus videos
