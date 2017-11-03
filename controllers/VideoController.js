@@ -213,13 +213,15 @@ exports.mregistrarVideo = function(req,res){
                         DelaySeconds: 0,
                         MessageGroupId:"proyecto3"
                     };
-
+                    console.log("- -- insertando en cola sqs ---")
                     sqs.sendMessage(params, function(err, data) {
                         if(err) {
+                            console.log("- eerror insertando en sqs --- ");
                             console.log(err);
                             res.send(err);
                         }
                         else {
+                            console.log("- correcta insertando en sqs --- ");
                             console.log(data);
                             res.status(200).json(datos);
                         }
