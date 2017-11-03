@@ -9,7 +9,7 @@ const uuidv4 = require('uuid/v4');
  * Funciones para mongo 
  */
 //aws.config.loadFromPath("./sqsconfig.json");
-AWS.config.update({region:'us-west-2'});
+aws.config.update({region:'us-west-2'});
 exports.mgetVideoByCompetition = function (req,res){
   // recibe el id del concurso y lista todos sus videos
   //show_home = 1 and state_id = 1 and notify = 1  and active=0
