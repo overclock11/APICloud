@@ -86,13 +86,8 @@ exports.mregisterCompetition = function(req,res){
       res.status(500,err);
     } else {
       if(datos.length>0){
-        let tam = datos[0].administrador.competition.length;
-        for(let i=0;i<tam;i++){
-          if(datos[0].administrador.competition[i]==req.body.competition_id){
-              datos[0].administrador.competition[i].push(req.body);
-              console.log(datos[0].administrador.competition[i]);
-          }
-        }
+        datos[0].administrador.competition.push(req.body);
+        console.log(datos[0]);
         Modelo.update({"_id":datos[0]._id}, datos[0],function(err,datos){
           if (err) {
             res.status(500).json(err);
